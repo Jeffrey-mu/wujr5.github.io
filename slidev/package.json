@@ -1,0 +1,17 @@
+{
+  "name": "slidev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "sh dev.sh",
+    "build": "sh build.sh"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@slidev/cli": "0.27.18",
+    "@slidev/theme-default": "0.21.1",
+    "@slidev/theme-seriph": "0.21.1"
+  }
+}
