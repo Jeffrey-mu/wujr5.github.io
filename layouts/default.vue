@@ -82,7 +82,7 @@ export default {
 
 /* markdown 样式 */
 .github-markdown-body {
-  line-height: 2 !important;
+  line-height: 1.5 !important;
   font-size: 18px !important;
 }
 
