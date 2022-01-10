@@ -305,7 +305,9 @@ export default {
       })
         .then((res) => {
           this.$message.success('新建成功');
-          this.$router.replace('/admin/edit?pid=' + res.object.id);
+          setTimeout(() => {
+            location.href = '/admin/edit?pid=' + res.object.id;
+          }, 500);
         })
         .catch((err) => {
           this.$message.error('新建失败：' + err.message);
