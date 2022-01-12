@@ -9,7 +9,7 @@ routerMode: hash
 
 ## 吴家荣 软件产品线
 
-2022 年 1 月 15 日
+2022 年 1 月 15 日，星期六
 
 ---
 layout: cover

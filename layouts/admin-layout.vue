@@ -1,9 +1,9 @@
 <template lang="pug">
-  Nuxt
+Nuxt
 </template>
 
 <script>
 export default {
-  name: 'admin-layout'
-}
+  name: 'admin-layout',
+};
 </script>

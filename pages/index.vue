@@ -29,49 +29,49 @@
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 2公里
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.run")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('run', 50)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('run', 50)" size="mini")
     div
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 100俯卧撑
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.pushUp")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('pushUp', 20)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('pushUp', 20)" size="mini")
     div
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 100仰卧起坐
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.sitUp")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('sitUp', 20)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('sitUp', 20)" size="mini")
     div
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 5组开合跳
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.kaihe")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('kaihe', 20)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('kaihe', 20)" size="mini")
     div
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 5组提膝触肘
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.tixi")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('tixi', 20)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('tixi', 20)" size="mini")
     div
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 5组深蹲
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.shendun")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('shendun', 20)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('shendun', 20)" size="mini")
     div
       .inbl.vtal-top.w-200.h-50.lh-50.fs-18.mr-20.t-c 5组高抬腿
       .inbl.vtal-top.w-730.h-50.vh-parent.mr-20
         el-progress.vh.wp-100(:percentage="oSport.taitui")
-      .inbl.vtal-top.w-100.h-50.pt-12(v-if="bAuth")
+      .inbl.vtal-top.w-100.h-50.pt-12(v-if="sWriteKey")
         el-button(icon="el-icon-minus" @click="decrease('taitui', 20)" size="mini")
         el-button(icon="el-icon-plus" @click="increase('taitui', 20)" size="mini")
 
@@ -143,8 +143,6 @@
 <script>
 import 'vue-calendar-heatmap/dist/vue-calendar-heatmap.css';
 import { CalendarHeatmap } from 'vue-calendar-heatmap';
-import Keyboard from 'keyboardjs';
-import { getWriteKey } from '@/assets/common';
 import config from '@/assets/config';
 import Cosmic from 'cosmicjs';
 import Promise from 'promise';
@@ -159,6 +157,9 @@ export default {
   computed: {
     nTodoCheckCount() {
       return (this.aTodoList.filter((i) => i.bCheck).length / this.aTodoList.length).toFixed(3) * 100;
+    },
+    sWriteKey() {
+      return this.$store.state.auth.writeKey;
     },
   },
   components: {
@@ -198,26 +199,23 @@ export default {
         taitui: 0,
       },
       sRoutineId: '',
-
-      sWriteKey: '',
-      bAuth: false,
       bRoutineLoading: false,
 
       aContribution: [],
     };
+  },
+  watch: {
+    sWriteKey(val) {
+      if (val) {
+        this.getTodayRoutine();
+      }
+    },
   },
   mounted() {
     this.getTodoMarkdown();
     this.getTodayRoutine();
     this.initNewsData();
     this.getAllRoutine();
-
-    // 绑定键盘
-    Keyboard.bind('alt + q', this.bindEditKey);
-  },
-  destroyed() {
-    // 解除绑定关键安检
-    Keyboard.unbind('alt + q', this.bindEditKey);
   },
   methods: {
     decrease(type, step) {
@@ -239,7 +237,7 @@ export default {
       this.updateTodayRoutine();
     },
     checkTodo(index) {
-      if (!this.bAuth || this.bRoutineLoading) return;
+      if (!this.sWriteKey || this.bRoutineLoading) return;
 
       this.aTodoList[index].bCheck = !this.aTodoList[index].bCheck;
 
@@ -558,33 +556,6 @@ export default {
           .catch((err) => {
             reject(err);
           });
-      });
-    },
-    getAuth() {
-      return new Promise((resolve, reject) => {
-        if (this.sWriteKey) {
-          this.bAuth = true;
-          return resolve();
-        }
-
-        getWriteKey()
-          .then((key) => {
-            this.sWriteKey = key;
-            this.bAuth = true;
-            this.$message.success('授权成功');
-
-            resolve();
-          })
-          .catch(() => {
-            this.$message.warning('密码错误');
-
-            reject();
-          });
-      });
-    },
-    bindEditKey() {
-      this.getAuth().then(() => {
-        this.getTodayRoutine();
       });
     },
   },

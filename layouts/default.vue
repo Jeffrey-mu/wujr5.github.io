@@ -33,6 +33,8 @@ div
 
 <script>
 import config from '@/assets/config';
+import Keyboard from 'keyboardjs';
+import { getWriteKey } from '@/assets/common';
 
 export default {
   data() {
@@ -68,7 +70,23 @@ export default {
       ],
     };
   },
-  methods: {},
+  mounted() {
+    Keyboard.bind('alt + q', this.bindEditKey);
+  },
+  destroyed() {
+    // 解除绑定按键
+    Keyboard.unbind('alt + q', this.bindEditKey);
+  },
+  methods: {
+    bindEditKey() {
+      getWriteKey()
+        .then((key) => {
+          this.$store.commit('auth/setWriteKey', key);
+          this.$message.success('授权成功');
+        })
+        .catch(() => {});
+    },
+  },
 };
 </script>
 
