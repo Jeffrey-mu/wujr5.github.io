@@ -1,1 +1,1 @@
-export default '修复新建文章的问题'
+export default '优化授权逻辑'
