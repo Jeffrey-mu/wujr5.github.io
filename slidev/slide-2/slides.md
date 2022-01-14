@@ -40,11 +40,12 @@ layout: center
 # 01-1 技术支持
 * 污染源动态管控（集中在上半年）
   + 数量：晋中动态管控（10+）、唐山动态管控（20+）
-  + 类型小计：现场问题解决
-
+  + 类型小计：现场bug修复（5+）、问题答疑（10+）、联调（15+）
+  + 大概占比：10% : 30% : 50%
 * 贵州大数据平台（集中在下半年）
   + 数量：320+
   + 类型小计：开账号（120+）、问题答疑（180+）、Bug修复（20+）
+  + 大概占比：37.5% : 56.25% : 6.25%
 
 ---
 
@@ -60,7 +61,7 @@ layout: center
 
 ### 习水桑德水务有限公司案情梳理
 
-<img src="https://tvax1.sinaimg.cn/large/ed796d65ly1gyd7d0erp9j218u17k1kx.jpg" alt="image" width="1614" data-width="1614" data-height="1568" style="border: 1px solid #eee; ">
+<img style="border: 1px solid #aaa; width: 600px" src="https://tvax1.sinaimg.cn/large/ed796d65ly1gyd7d0erp9j218u17k1kx.jpg">
 
 ---
 
@@ -131,6 +132,68 @@ layout: two-cols
 
 ---
 
+黔智运维小程序
+
+<div>
+  <img style="display: inline-block; border: 1px solid gray; margin-right: 20px" width="180" src="https://tva2.sinaimg.cn/large/ed796d65ly1gydjcfks0mj20ku112468.jpg">
+  <img style="display: inline-block; border: 1px solid gray; margin-right: 20px" width="180" src="https://tvax3.sinaimg.cn/large/ed796d65ly1gydjdyhbkwj20ku112te2.jpg">
+  <img style="display: inline-block; border: 1px solid gray; margin-right: 20px" width="180" src="https://tva3.sinaimg.cn/large/ed796d65ly1gydjeoj73uj20ku112ag4.jpg">
+  <img style="display: inline-block; border: 1px solid gray; margin-right: 20px" width="180" src="https://tvax2.sinaimg.cn/large/ed796d65ly1gydjexkjk0j20ku112wjn.jpg">
+</div>
+
+---
+
+黔智运维小程序
+
+<div>
+  <img style="display: inline-block; border: 1px solid gray; margin-right: 20px" width="180" src="https://tva4.sinaimg.cn/large/ed796d65ly1gydjfk352mj20ku112dl2.jpg">
+  <img style="display: inline-block; border: 1px solid gray; margin-right: 20px" width="180" src="https://tva3.sinaimg.cn/large/ed796d65ly1gydjfrrdtwj20ku11244o.jpg">
+</div>
+
+---
+
+运行维护平台：仪表板
+
+<img style="border: 1px solid gray; width: 530px" src="https://tva2.sinaimg.cn/large/ed796d65ly1gydj8kw7k0j21sq1ig1kj.jpg" />
+
+---
+
+运行维护平台：运维分析
+
+<img style="border: 1px solid gray; width: 530px" src="https://tva4.sinaimg.cn/large/ed796d65ly1gydjiztgtnj21tk1ic1en.jpg" />
+
+---
+
+运行维护平台：数字站房
+
+<img style="border: 1px solid gray; width: 750px" src="https://tva4.sinaimg.cn/large/ed796d65ly1gydjk1fb1bj22r01iokjl.jpg" />
+
+---
+
+运行维护平台：运维表单
+
+<img style="border: 1px solid gray; width: 750px" src="https://tva2.sinaimg.cn/large/ed796d65ly1gydjmexvsaj22rk1ikkjl.jpg" />
+
+---
+
+运行维护平台：运维表单详情
+
+<img style="border: 1px solid gray; width: 750px" src="https://tva1.sinaimg.cn/large/ed796d65ly1gydjn5iri5j22rk1ik4pm.jpg" />
+
+---
+
+决策分析平台：资源一张图
+
+<img style="border: 1px solid gray; width: 750px" src="https://tvax2.sinaimg.cn/large/ed796d65ly1gydjtc8nzfj22rk1ioe84.jpg" />
+
+---
+
+决策分析平台：区域画像
+
+<img style="border: 1px solid gray; width: 750px" src="https://tvax3.sinaimg.cn/large/ed796d65ly1gydjv9kea4j22rk1iou10.jpg" />
+
+---
+
 # 01-3 贵州大数据平台-迭代开发
 * 需求迭代周期：08.16 后开始
 * 较大的迭代版本有：18 个，约 1.5 周迭代一个版本
@@ -192,11 +255,47 @@ layout: center
 * 交互设计：合理使用 Web 组件
 
 ---
+layout: none
+---
+
+<img style="border: 1px solid gray; width: 550px; margin-top: 20px; margin-left: 20px" src="https://tvax2.sinaimg.cn/large/ed796d65ly1gydlco69zej21kk1fwqg1.jpg" />
+
+--- 
+layout: none
+---
+
+<img style="border: 1px solid gray; width: 550px; margin-top: 20px; margin-left: 20px" src="https://tva4.sinaimg.cn/large/ed796d65ly1gydlewnznmj21gm19kdwd.jpg" />
+
+--- 
+layout: none
+---
+
+<img style="border: 1px solid gray; width: 550px; margin-top: 20px; margin-left: 20px" src="https://tvax4.sinaimg.cn/large/ed796d65ly1gydlfvny06j21ge18w4c9.jpg" />
+
+---
 
 # 03-2 经验-移动端产品的一些小结
 * 移动端选型，就用微信小程序：免费、跨平台、开发成本低
 * 布局：标签式、跳板式、列表式、结合式
 * 交互设计：合理使用移动端组件
+
+---
+layout: none
+---
+
+<img style="border: 1px solid gray; width: 500px; margin-top: 20px; margin-left: 20px" src="https://tvax1.sinaimg.cn/large/ed796d65ly1gydlgg0km4j21gq1hwgzy.jpg" />
+
+---
+layout: none
+---
+
+<img style="border: 1px solid gray; width: 500px; margin-top: 20px; margin-left: 20px" src="https://tva2.sinaimg.cn/large/ed796d65ly1gydlhiw95wj21ha1dan9v.jpg" />
+
+---
+layout: none
+---
+
+<img style="border: 1px solid gray; width: 550px; margin-top: 20px; margin-left: 20px" src="https://tvax3.sinaimg.cn/large/ed796d65ly1gydli0uyiuj21gy10c7cv.jpg" />
 
 ---
 layout: center
@@ -212,3 +311,4 @@ layout: center
 * 打磨好执法板块的功能
   + 完善好三监一控执法报警逻辑及其证据链
 * 打磨好决策分析和展示平台的功能
+* 跟进非现场监管平台的售后工作
