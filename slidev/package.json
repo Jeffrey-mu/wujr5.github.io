@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@slidev/cli": "0.27.18",
+    "@slidev/cli": "0.28.0",
     "@slidev/theme-default": "0.21.1",
     "@slidev/theme-seriph": "0.21.1"
   }

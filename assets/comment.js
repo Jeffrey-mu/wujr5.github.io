@@ -1,1 +1,1 @@
-export default '优化授权逻辑'
+export default '更新slide-2'
