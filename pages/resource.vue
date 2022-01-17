@@ -6,7 +6,7 @@
         el-button(size="mini" @click="showDialog('new')" type="primary") 添加
     div
       .bd-1.br-4.my-10.h-60.mb-10.pst-rlt.pl-20(v-for="(item, index) in aResource" :key="`resource-${index}`")
-        a.lh-60(:href="item.url" target="_blank") {{ item.metadata ? item.metadata.name : item.name }}
+        a.lh-60(:href="item.url" target="_blank") {{ item.metadata.name }}
 
         .fl-r.inbl.vtal-top.mr-10.lh-60(v-if="sWriteKey")
           el-button(size="mini" type="danger" :loading="item.loading" @click="deleteMedia(item)") 删除
@@ -77,7 +77,7 @@ export default {
       if (type == 'edit') {
         this.oDialog.id = media.id;
         this.oDialog.bucket = media.bucket;
-        this.oDialog.name = media.name;
+        this.oDialog.name = media.metadata.name;
         this.oDialog.url = media.url;
       } else {
         this.oDialog.name = '';
