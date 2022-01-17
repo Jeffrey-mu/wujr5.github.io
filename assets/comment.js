@@ -1,1 +1,1 @@
-export default '增加增删改查资源的功能'
+export default '增加待办页面'

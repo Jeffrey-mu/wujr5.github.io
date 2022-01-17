@@ -2,7 +2,7 @@
 .p-20.pst-rlt
   .h-250.bg-loading(v-if="!oBlogDetail.content")
 
-  nuxt-link.pst-absl.r-30.t-20.fs-14(:to="'/admin/edit?pid=' + oBlogDetail.id" v-if="bShowEditBtn" target="_blank") 编辑
+  nuxt-link.pst-absl.r-30.t-20.fs-14(:to="'/admin/edit?pid=' + oBlogDetail.id" v-if="sWriteKey" target="_blank") 编辑
 
   v-md-preview.px-80(:text="oBlogDetail.content" style="line-height: 2")
 </template>
@@ -10,7 +10,6 @@
 <script>
 import config from '@/assets/config';
 import Cosmic from 'cosmicjs';
-import Keyboard from 'keyboardjs';
 
 const api = Cosmic();
 
@@ -20,19 +19,18 @@ export default {
       title: this.sBlogTitle + config.sPageBaseTitle,
     };
   },
+  computed: {
+    sWriteKey() {
+      return this.$store.state.auth.writeKey;
+    },
+  },
   data() {
     return {
-      bShowEditBtn: false,
       oBlogDetail: {
         content: '',
       },
       sBlogTitle: '博客详情',
     };
-  },
-  methods: {
-    bindEditKey() {
-      this.bShowEditBtn = !this.bShowEditBtn;
-    },
   },
   mounted() {
     api
@@ -56,13 +54,6 @@ export default {
           toc: post.metadata.toc ? post.metadata.toc.title : '未定义',
         };
       });
-
-    // 绑定键盘
-    Keyboard.bind('alt + q', this.bindEditKey);
-  },
-  destroyed() {
-    // 解除绑定关键安检
-    Keyboard.unbind('alt + q', this.bindEditKey);
   },
 };
 </script>

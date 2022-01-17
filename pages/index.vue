@@ -124,8 +124,6 @@
   div
     h3.mb-10 环球时报、参考消息
     a.news.inbl.vtal-top.h-50.lh-50.fs-18.w-100.t-c.bd-1.br-4.mr-20.mb-20(:href="`http://www.haitc.com/?t=${sTimeStamp}`" target="_blank") 打开
-
-  v-md-preview(:text="sTodoMarkdown" style="min-height: 100px" v-loading="!sTodoMarkdown")
 </template>
 
 <style>
@@ -186,8 +184,6 @@ export default {
       aEnvironmentNews: [],
       aCankaoxiaoxi: [],
 
-      sTodoMarkdown: '',
-
       // 运动数据
       oSport: {
         run: 0,
@@ -212,7 +208,6 @@ export default {
     },
   },
   mounted() {
-    this.getTodoMarkdown();
     this.getTodayRoutine();
     this.initNewsData();
     this.getAllRoutine();
@@ -243,22 +238,7 @@ export default {
 
       this.updateTodayRoutine();
     },
-    getTodoMarkdown() {
-      api
-        .bucket({
-          slug: '4d7c8cd0-2822-11ec-8e75-2f845ec5c57c',
-          read_key: 'KW8eCqNzGJ8U05aYWCUNHKueNH5COLxAOv1Ou71XIPArrTIDeU',
-        })
-        .getObjects({
-          query: {
-            slug: 'todo',
-          },
-        })
-        .then((res) => {
-          let post = res.objects[0];
-          this.sTodoMarkdown = post.metadata.blog_content;
-        });
-    },
+
     // 获取新京报数据
     getBJnewsData() {
       let aBJnewsInfo = [

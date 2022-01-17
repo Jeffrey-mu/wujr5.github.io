@@ -48,6 +48,10 @@ export default {
           link: '/',
         },
         {
+          title: '待办',
+          link: '/todo',
+        },
+        {
           title: '博客',
           link: '/blog',
         },
