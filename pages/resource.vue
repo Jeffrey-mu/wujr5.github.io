@@ -1,13 +1,13 @@
 <template lang="pug">
 .p-20
   div(v-loading="bPageLoading")
-    h2 一些资源（{{ nTotal }}）
+    h2 资源（数量：{{ nTotal }}，大小：{{ nSizeTotal }} M）
       .fl-r(v-if="sWriteKey")
         el-button(size="mini" @click="showDialog('new')" type="primary") 添加
     div
       .bd-1.br-4.my-10.h-60.mb-10.pst-rlt.pl-20(v-for="(item, index) in aResource" :key="`resource-${index}`")
-        a.lh-60(:href="item.url" target="_blank") {{ item.metadata.name }}
-
+        a.inbl.vtal-top.w-600.lh-60(:href="item.url" target="_blank") {{ item.metadata.name }}
+        .inbl.vtal-top.w-100.lh-60.fs-12.c-gray {{ (item.size / 1000 / 1000).toFixed(2) }} M
         .fl-r.inbl.vtal-top.mr-10.lh-60(v-if="sWriteKey")
           el-button(size="mini" type="danger" :loading="item.loading" @click="deleteMedia(item)") 删除
           el-button(size="mini" type="primary" :loading="item.loading" @click="showDialog('edit', item)") 修改
@@ -47,6 +47,7 @@ export default {
       aResource: [],
       aEditResource: [],
       nTotal: 0,
+      nSizeTotal: 0,
       bPageLoading: true,
       bShowDialog: false,
       oDialog: {
@@ -195,6 +196,12 @@ export default {
             return i;
           });
           this.nTotal = res.total;
+          this.nSizeTotal = (
+            res.media.reduce((total, item) => {
+              return total + item.size;
+            }, 0) /
+            (1000 * 1000)
+          ).toFixed(2);
         })
         .finally(() => {
           this.bPageLoading = false;

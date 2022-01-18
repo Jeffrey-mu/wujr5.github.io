@@ -1,1 +1,1 @@
-export default '优化代码'
+export default '增加资源大小的显示'
