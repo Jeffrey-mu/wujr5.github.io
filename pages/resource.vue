@@ -7,7 +7,7 @@
     div
       .bd-1.br-4.my-10.h-60.mb-10.pst-rlt.pl-20(v-for="(item, index) in aResource" :key="`resource-${index}`")
         a.inbl.vtal-top.w-600.lh-60(:href="item.url" target="_blank") {{ item.metadata.name }}
-        .inbl.vtal-top.w-100.lh-60.fs-12.c-gray {{ (item.size / 1000 / 1000).toFixed(2) }} M
+        .inbl.vtal-top.w-100.lh-60.fs-12.c-gray {{ (item.size / 1000 / 1000).toFixed(3) }} M
         .fl-r.inbl.vtal-top.mr-10.lh-60(v-if="sWriteKey")
           el-button(size="mini" type="danger" :loading="item.loading" @click="deleteMedia(item)") 删除
           el-button(size="mini" type="primary" :loading="item.loading" @click="showDialog('edit', item)") 修改
@@ -201,7 +201,7 @@ export default {
               return total + item.size;
             }, 0) /
             (1000 * 1000)
-          ).toFixed(2);
+          ).toFixed(3);
         })
         .finally(() => {
           this.bPageLoading = false;
