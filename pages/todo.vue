@@ -2,6 +2,8 @@
 .p-20.pst-rlt
   .h-250.bg-loading(v-if="!sTodoMarkdown")
 
+  nuxt-link.pst-absl.r-30.t-20.fs-14(:to="'/admin/edit?pid=' + sPostId" v-if="sWriteKey" target="_blank") 编辑
+
   v-md-preview.px-80(:text="sTodoMarkdown" style="line-height: 2")
 </template>
 
@@ -17,9 +19,15 @@ export default {
       title: '待办' + config.sPageBaseTitle,
     };
   },
+  computed: {
+    sWriteKey() {
+      return this.$store.state.auth.writeKey;
+    },
+  },
   data() {
     return {
       sTodoMarkdown: '',
+      sPostId: '',
     };
   },
   methods: {
@@ -36,6 +44,7 @@ export default {
         })
         .then((res) => {
           let post = res.objects[0];
+          this.sPostId = post.id;
           this.sTodoMarkdown = post.metadata.blog_content;
         });
     },
