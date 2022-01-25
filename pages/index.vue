@@ -462,7 +462,7 @@ export default {
           },
           props: 'slug,title,id,metadata.todo,metadata.sport',
           sort: 'created_at',
-          limit: 20,
+          limit: 400,
         })
         .then((res) => {
           this.aContribution = res.objects.map((item) => {
