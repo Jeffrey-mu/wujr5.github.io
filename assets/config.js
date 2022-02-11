@@ -43,8 +43,8 @@ export default {
       link: 'https://s.weibo.com/top/summary?cate=realtimehot',
     },
     {
-      title: '特别关注',
-      link: 'https://weibo.com/mygroups?gid=3921172360211603&wvr=6&leftnav=1&isspecialgroup=1',
+      title: '最新微博',
+      link: 'https://weibo.com/mygroups?gid=110003984158053',
     },
     {
       title: '知乎热榜',
