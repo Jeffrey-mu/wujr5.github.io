@@ -19,7 +19,7 @@
       :style="todo.bCheck ? 'background-color: #ddd' : ''"
       @click="checkTodo(index)"
     )
-      a(v-if="todo.link" :href="`${todo.link}?t=${sTimeStamp}`" target="_blank" style="text-decoration: none; color: blue") {{ todo.title }}
+      a(v-if="todo.link" :href="`${todo.link}${todo.link.indexOf('?') == -1 ? '?' : '&'}t=${sTimeStamp}`" target="_blank" style="text-decoration: none; color: blue") {{ todo.title }}
       span(v-else) {{ todo.title }}
 
   //- 运动数据

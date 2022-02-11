@@ -1,1 +1,1 @@
-export default '更新特别关注为最新微博'
+export default '修复最新微博链接问题'
