@@ -17,10 +17,11 @@
       v-for="(todo, index) in aTodoList"
       :key="`todo-${index}`"
       :style="todo.bCheck ? 'background-color: #ddd' : ''"
-      @click="checkTodo(index)"
+      @click="checkTodo(index, true)"
     )
       a(v-if="todo.link" :href="`${todo.link}${todo.link.indexOf('?') == -1 ? '?' : '&'}t=${sTimeStamp}`" target="_blank" style="text-decoration: none; color: blue") {{ todo.title }}
       span(v-else) {{ todo.title }}
+      .inbl.vtal-top.pst-absl.fs-12.lh-20.check-item.b-0.r-5.c-green(v-if="sWriteKey && todo.bCheck" @click="checkTodo(index, false)") 取消
 
   //- 运动数据
   h3 运动数据
@@ -231,10 +232,12 @@ export default {
 
       this.updateTodayRoutine();
     },
-    checkTodo(index) {
+    checkTodo(index, value) {
       if (!this.sWriteKey || this.bRoutineLoading) return;
 
-      this.aTodoList[index].bCheck = !this.aTodoList[index].bCheck;
+      if (this.aTodoList[index].bCheck == value) return;
+
+      this.aTodoList[index].bCheck = value;
 
       this.updateTodayRoutine();
     },

@@ -90,6 +90,10 @@ export default {
       title: '记单词',
       link: 'https://wujr5.cn/words',
     },
+    {
+      title: '微信读书',
+      link: 'https://weread.qq.com/',
+    },
   ],
   sPageBaseTitle: ' · 吴家荣',
   sServerHost: 'https://handan.wanweitech.xyz:50501',
