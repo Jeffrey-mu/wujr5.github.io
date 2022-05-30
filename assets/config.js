@@ -36,7 +36,7 @@ export default {
     },
     {
       title: '今天天气',
-      link: 'http://www.weather.com.cn/weather1dn/101010700.shtml',
+      link: 'http://forecast.weather.com.cn/town/weather1dn/101200105005.shtml',
     },
     {
       title: '微博热搜',

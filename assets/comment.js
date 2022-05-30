@@ -1,1 +1,1 @@
-export default '增加微信读书，调整反选逻辑'
+export default '今天天气的链接改为武汉市江夏区佛祖岭街道'
