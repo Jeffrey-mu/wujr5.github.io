@@ -1,1 +1,1 @@
-export default 'v22.05.31'
+export default 'v22.06.05'

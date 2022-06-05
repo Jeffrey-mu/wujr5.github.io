@@ -72,7 +72,7 @@ export default {
     },
     {
       title: '风险动态',
-      link: 'https://www.qcc.com/monitor_dynamic',
+      link: 'https://r.qcc.com/monitor/dynamic/risk',
     },
     {
       title: '行情中心',
