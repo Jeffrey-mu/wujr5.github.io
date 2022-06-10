@@ -1,1 +1,1 @@
-export default '修改风险动态链接'
+export default '增加通过query参数授权功能'

@@ -6,9 +6,9 @@ import Promise from 'promise';
 
 const api = Cosmic();
 
-export function getWriteKey() {
+export function getWriteKey(pass) {
   return new Promise((resolve, reject) => {
-    let password = prompt('访问密码：');
+    let password = pass ? pass : prompt('访问密码：');
     if (!password) {
       reject();
       return;

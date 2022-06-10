@@ -76,14 +76,16 @@ export default {
   },
   mounted() {
     Keyboard.bind('alt + q', this.bindEditKey);
+
+    this.$route.query.p && this.bindEditKey(null, this.$route.query.p);
   },
   destroyed() {
     // 解除绑定按键
     Keyboard.unbind('alt + q', this.bindEditKey);
   },
   methods: {
-    bindEditKey() {
-      getWriteKey()
+    bindEditKey(e, pass) {
+      getWriteKey(pass)
         .then((key) => {
           this.$store.commit('auth/setWriteKey', key);
           this.$message.success('授权成功');
