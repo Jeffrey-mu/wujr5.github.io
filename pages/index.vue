@@ -104,15 +104,6 @@
         :style="item.disable ? 'color: gray; background: #ccc; pointer-events: none;' : ''"
       ) {{ index + 1 }}
 
-  div(v-if="aEnvironmentNews && aEnvironmentNews.length > 0")
-    h3.mb-10 中国环境报
-    a.news.inbl.vtal-top.h-50.lh-50.fs-20.w-100.t-c.bd-1.br-4.mr-20.mb-20(
-      v-for="(item, index) in aEnvironmentNews"
-      :href="item.url"
-      target="_blank"
-      :style="item.disable ? 'color: gray; background: #ccc; pointer-events: none;' : ''"
-    ) {{ index + 1 }}
-
   div(v-if="aYangchengNews && aYangchengNews.length > 0")
     h3.mb-10 羊城晚报
     a.news.inbl.vtal-top.h-50.lh-50.fs-20.w-100.t-c.bd-1.br-4.mr-20.mb-20(
@@ -121,10 +112,6 @@
       target="_blank"
       :style="item.disable ? 'color: gray; background: #ccc; pointer-events: none;' : ''"
     ) {{ index + 1 }}
-
-  div
-    h3.mb-10 环球时报、参考消息
-    a.news.inbl.vtal-top.h-50.lh-50.fs-18.w-100.t-c.bd-1.br-4.mr-20.mb-20(:href="`http://www.haitc.com/?t=${sTimeStamp}`" target="_blank") 打开
 </template>
 
 <style>

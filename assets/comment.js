@@ -1,1 +1,1 @@
-export default '增加通过query参数授权功能'
+export default '移除环境报、环球时报、参考消息'
