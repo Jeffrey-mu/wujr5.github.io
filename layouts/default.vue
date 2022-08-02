@@ -1,6 +1,6 @@
 <template lang="pug">
 div
-  .h-55.bg-white.pst-rlt(style="border-bottom: 1px solid #e1e5ee; background-color: #f8f8f8")
+  .h-55.bg-white.pst-fx.layout-default-menu(style="border-bottom: 1px solid #e1e5ee; background-color: #f8f8f8;")
     .layout-default.ovfl-hd
       nuxt-link.inbl.vtal-top.h-55.lh-55.w-130.t-c.fw-500.menu.bs-bd(
         v-for="menu in aMenu"
@@ -13,7 +13,7 @@ div
         .h-5.vh-parent
           .h-5.w-80.vh.menu-bar
 
-  Nuxt.layout-default.bg-white.pst-rlt(style="min-height: calc(100vh - 50px)")
+  Nuxt.layout-default.bg-white.pst-rlt.mt-55(style="min-height: calc(100vh - 50px)")
 
   .h-150.pst-rlt(style="background-color: hsl(0, 0%, 95%)")
     .layout-default.pst-rlt
@@ -99,9 +99,17 @@ export default {
 <style>
 .layout-default {
   width: 1156px;
+  /* width: 100%; */
   height: 100%;
   margin: 0 auto;
   overflow-x: hidden;
+}
+.layout-default-menu {
+  width: 100vw;
+  z-index: 2;
+}
+#__layout > div{
+  overflow: hidden;
 }
 
 /* markdown 样式 */
